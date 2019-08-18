@@ -2,7 +2,8 @@ Predictive Analytics
 Projects from https://deeplearning-academy.com
 
 
-anomaly_detection -
+predictive_behaviour -
+anomaly_detection    -
 
 
 

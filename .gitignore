@@ -3,4 +3,6 @@ __pycache__
 *.tfrecord
 .idea
 events.out.tfevents.*
+checkpoints/*
 model.ckpt.*
+checkpoint
