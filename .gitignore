@@ -2,3 +2,5 @@
 __pycache__
 *.tfrecord
 .idea
+events.out.tfevents.*
+model.ckpt.*
