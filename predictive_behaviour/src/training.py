@@ -141,7 +141,7 @@ def main(_):
         # Get the class with the highest predicted probability 
         y_pred = np.argmax(scores, axis=1)
 
-        # Get the probability values ONLY for the class, where customers leave the bank.
+        # Get the probability values ONLY for the class, where customers Accept the offer.
         pos_label_scores = scores[:, 1]
 
         # Evaluate the model
