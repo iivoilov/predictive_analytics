@@ -27,8 +27,6 @@ def evaluate_model(y_test, y_pred, pos_label_scores):
     recall=tp/(tp+fn)
     f1=2*precision*recall/(precision+recall)
     
-    plot_roc_curve(y_test, pos_label_scores)
-    
     auc=roc_auc_score(y_test, pos_label_scores)
     
     print('Precision: %.5f: '%precision)
@@ -36,7 +34,9 @@ def evaluate_model(y_test, y_pred, pos_label_scores):
     print('F1: %.5f: '%f1)
     print('AUC: %f'%auc)
     print(confusion_matrix(y_test, y_pred))  
-    
+
+    plot_roc_curve(y_test, pos_label_scores)
+
 
 def plot_roc_curve(y_test, pos_label_scores):
     '''Computes the AUC. 
