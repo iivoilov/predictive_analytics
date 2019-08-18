@@ -11,11 +11,11 @@ class BaseModel(object):
     def init_parameters(self):
         '''Initializes the weights and biases of the network '''
 
-        n2 = 60
-        n3 = 60
+        n2 = 128
+        n3 = 128
 
         with tf.name_scope('weights'):
-            self.W1=tf.get_variable('W1', shape=[53,n2], dtype=tf.float32, initializer=self.weight_initializer)
+            self.W1=tf.get_variable('W1', shape=[45,n2], dtype=tf.float32, initializer=self.weight_initializer)
             self.W2=tf.get_variable('W2', shape=[n2,n3], dtype=tf.float32, initializer=self.weight_initializer)
             self.W3=tf.get_variable('W4', shape=[n3,2], dtype=tf.float32, initializer=self.weight_initializer)
         

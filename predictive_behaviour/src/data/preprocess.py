@@ -18,8 +18,23 @@ def get_data():
     #Get the labels from the dataset
     labels = data.iloc[:,20].values
 
+    # Encode labels
+    labels = LabelEncoder().fit_transform(labels)
+
+    education_map = {
+        'illiterate': 0.0,
+        'basic.4y' : 1.0,
+        'basic.6y' : 2.0,
+        'basic.9y' : 3.0,
+        'high.school' : 4.0,
+        'professional.course' : 5.0,
+        'university.degree' : 5.0,
+        'unknown' : 4.0
+        }
+    data['education'] = data['education'].map(education_map)
+
     col_t = ColumnTransformer(
-        [("cat", OneHotEncoder(), ['job','marital','education','default','housing','loan','contact', 'month', 'day_of_week','poutcome'])],
+        [("cat", OneHotEncoder(), ['job','marital','default','housing','loan','contact', 'month', 'day_of_week','poutcome'])],
         sparse_threshold=0)
     features = col_t.fit_transform(features)
 
@@ -27,8 +42,7 @@ def get_data():
     sc = MinMaxScaler()
     features = sc.fit_transform(features)
 
-    # Encode labels
-    labels = LabelEncoder().fit_transform(labels)
+    print(features.shape)
 
     # Split the dataset into training and testset. The train/test/validation ratio is 70%/20%/10%
     
