@@ -24,15 +24,15 @@ tf.app.flags.DEFINE_string('train_summary_path',
                            'Path for the summaries.'
                            )
 
-tf.app.flags.DEFINE_integer('n_epoch', 2, 'Number of epochs.')
+tf.app.flags.DEFINE_integer('n_epoch', 20, 'Number of epochs.')
 
-tf.app.flags.DEFINE_float('learning_rate', 0.00005, 'Learning rate.')
+tf.app.flags.DEFINE_float('learning_rate', 0.0005, 'Learning rate.')
 
 tf.app.flags.DEFINE_boolean('l2_reg', True, 'Whether to use L2 regularization or not.')
 
 tf.app.flags.DEFINE_float('alpha', 1e-4, 'Regularization term.')
 
-tf.app.flags.DEFINE_integer('batch_size', 64, 'Batch size.')
+tf.app.flags.DEFINE_integer('batch_size', 4096, 'Batch size.')
 
 tf.app.flags.DEFINE_integer('eval_after', 10, 'Evaluate performance after number of batches.')
 
