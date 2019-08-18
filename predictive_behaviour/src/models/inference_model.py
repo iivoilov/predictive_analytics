@@ -5,4 +5,4 @@ class InferenceModel(BaseModel):
     def __init__(self):
         
         super(InferenceModel,self).__init__()
-        self._init_parameters()
+        self.init_parameters()
