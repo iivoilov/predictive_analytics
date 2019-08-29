@@ -64,7 +64,7 @@ def get_test_data(FLAGS):
 
 def parse(serialized):
 
-    features={'features':tf.FixedLenFeature([45], tf.float32),
+    features={'features':tf.FixedLenFeature([42], tf.float32),
               'labels':tf.FixedLenFeature([1], tf.float32),
               }
     
